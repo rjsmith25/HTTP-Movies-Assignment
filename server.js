@@ -74,10 +74,10 @@ app.post("/api/movies", (req, res) => {
 });
 
 app.put("/api/movies/:id", (req, res) => {
+  console.log(req.body);
   if (!req.params.id)
     res.status(400).send("Your request is missing the movie id");
   if (
-    req.body.id === undefined ||
     !req.body.title ||
     !req.body.director ||
     !req.body.metascore ||
